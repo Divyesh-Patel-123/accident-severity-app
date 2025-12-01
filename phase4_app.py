@@ -75,7 +75,7 @@ st.header("📊 Severity Distribution (Filtered)")
 fig_filt, ax_filt = plt.subplots(figsize=(6,4))  # smaller chart
 filtered_df["Severity"].value_counts().sort_index().plot(kind="bar", ax=ax_filt)
 ax_filt.set_xlabel("Severity Level")
-ax_filt.set_ylabel("Count (Filtered)")
+ax_filt.set_ylabel("Count")
 ax_filt.set_title("Severity Distribution for Selected Filters")
 
 st.pyplot(fig_filt)
@@ -86,16 +86,11 @@ st.pyplot(fig_filt)
 # ======================
 st.header("🌐 Overall Severity Distribution (Full Dataset)")
 
-#fig_all, ax_all = plt.subplots(figsize=(6,4))  # reduced chart size
-#df["Severity"].value_counts().sort_index().plot(kind="bar", ax=ax_all, color="gray")
-#ax_all.set_xlabel("Severity Level")
-#ax_all.set_ylabel("Count")
-#ax_all.set_title("Global Severity Distribution for Entire Dataset")
-fig_all, ax_all = plt.subplots(figsize=(5,4))
+fig_all, ax_all = plt.subplots(figsize=(6,4))  # reduced chart size
 df["Severity"].value_counts().sort_index().plot(kind="bar", ax=ax_all, color="gray")
 ax_all.set_xlabel("Severity Level")
-ax_all.set_ylabel("Accident Count")
-ax_all.set_title("Overall Severity Distribution (Actual Counts)")
+ax_all.set_ylabel("Count")
+ax_all.set_title("Global Severity Distribution for Entire Dataset")
 
 st.pyplot(fig_all)
 
