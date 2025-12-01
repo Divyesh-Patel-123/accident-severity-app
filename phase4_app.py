@@ -9,12 +9,14 @@ st.title("Accident Severity Prediction – Interactive Demo 🚦")
 # ======================
 # Load cleaned dataset
 # ======================
-@st.cache_data
-def load_data():
-    return pd.read_csv("https://drive.google.com/uc?export=download&id=1uTsZaQb3NtIWmBVWdTQLyXYHVGXvlvRA")
+import gdown
 
-df = load_data()
+url = "https://drive.google.com/uc?id=1uTsZaQb3NtIWmBVWdTQLyXYHVGXvlvRA"
+output = "accidents.csv"
 
+gdown.download(url, output, quiet=False)
+
+df = pd.read_csv("accidents.csv")
 
 # ======================
 # Dataset Preview
