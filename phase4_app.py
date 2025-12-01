@@ -86,11 +86,16 @@ st.pyplot(fig_filt)
 # ======================
 st.header("🌐 Overall Severity Distribution (Full Dataset)")
 
-fig_all, ax_all = plt.subplots(figsize=(6,4))  # reduced chart size
+#fig_all, ax_all = plt.subplots(figsize=(6,4))  # reduced chart size
+#df["Severity"].value_counts().sort_index().plot(kind="bar", ax=ax_all, color="gray")
+#ax_all.set_xlabel("Severity Level")
+#ax_all.set_ylabel("Count")
+#ax_all.set_title("Global Severity Distribution for Entire Dataset")
+fig_all, ax_all = plt.subplots(figsize=(5,4))
 df["Severity"].value_counts().sort_index().plot(kind="bar", ax=ax_all, color="gray")
 ax_all.set_xlabel("Severity Level")
-ax_all.set_ylabel("Count")
-ax_all.set_title("Global Severity Distribution for Entire Dataset")
+ax_all.set_ylabel("Accident Count")
+ax_all.set_title("Overall Severity Distribution (Actual Counts)")
 
 st.pyplot(fig_all)
 
