@@ -13,9 +13,9 @@ import zipfile
 import urllib.request
 import os
 
-zip_url = "https://raw.githubusercontent.com/<your-username>/<repo-name>/main/US_Accidents_sample100k.zip"
-zip_path = "US_Accidents_sample100k.zip"
-csv_path = "US_Accidents_sample100k.csv"
+zip_url = "https://raw.githubusercontent.com/<your-username>/<repo-name>/main/US_Accidents_cleaned_100k.zip"
+zip_path = "US_Accidents_cleaned_100k.zip"
+csv_path = "US_Accidents_cleaned_100k.csv"
 
 if not os.path.exists(csv_path):
     urllib.request.urlretrieve(zip_url, zip_path)
