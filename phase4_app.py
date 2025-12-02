@@ -10,11 +10,10 @@ st.title("Accident Severity Prediction – Interactive Demo 🚦")
 # Load cleaned dataset
 # ======================
 import gdown
-
-url = "https://drive.google.com/uc?id=1uTsZaQb3NtIWmBVWdTQLyXYHVGXvlvRA"
+url = "https://drive.google.com/uc?export=download&id=1uTsZaQb3NtIWmBVWdTQLyXYHVGXvlvRA"
 output = "accidents.csv"
 
-gdown.download(url, output, quiet=False)
+gdown.download(url, output, quiet=False, fuzzy=True)
 
 df = pd.read_csv("accidents.csv")
 
