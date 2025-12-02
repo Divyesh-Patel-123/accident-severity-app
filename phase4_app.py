@@ -9,13 +9,21 @@ st.title("Accident Severity Prediction – Interactive Demo 🚦")
 # ======================
 # Load cleaned dataset
 # ======================
-import gdown
-url = "https://drive.google.com/uc?export=download&id=1uTsZaQb3NtIWmBVWdTQLyXYHVGXvlvRA"
-output = "accidents.csv"
+import zipfile
+import urllib.request
+import os
 
-gdown.download(url, output, quiet=False, fuzzy=True)
+zip_url = "https://raw.githubusercontent.com/<your-username>/<repo-name>/main/US_Accidents_sample100k.zip"
+zip_path = "US_Accidents_sample100k.zip"
+csv_path = "US_Accidents_sample100k.csv"
 
-df = pd.read_csv("accidents.csv")
+if not os.path.exists(csv_path):
+    urllib.request.urlretrieve(zip_url, zip_path)
+
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall(".")
+
+df = pd.read_csv(csv_path)
 
 # ======================
 # Dataset Preview
